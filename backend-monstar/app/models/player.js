@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const physicalAttSchema = require('./physical_att')
 
 const playerSchema = new mongoose.Schema(
 	{
@@ -21,6 +22,7 @@ const playerSchema = new mongoose.Schema(
 			type: mongoose.Schema.Types.ObjectId,
 			ref: 'User',
 		},
+		physicalAtt: [physicalAttSchema]
 	},
 	{
 		timestamps: true,
